@@ -1,0 +1,9 @@
+
+2023-10-27 12:58:02,903 - INFO - <module> - starting the server
+2023-10-27 12:58:04,240 - INFO - <module> - starting the server
+2023-10-27 12:58:21,323 - INFO - <module> - starting the server
+2023-10-27 12:58:22,627 - INFO - <module> - starting the server
+2023-10-27 12:58:36,200 - INFO - authorization - authorization was successful
+2023-10-27 12:58:36,857 - INFO - all_students - all data has been sent
+2023-10-27 12:58:57,289 - INFO - change_data - data changed successfully
+2023-10-27 12:59:06,395 - INFO - delete_student - student successfully removed
