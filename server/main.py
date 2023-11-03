@@ -5,10 +5,17 @@ from flask import Flask, request, jsonify
 from configparser import ConfigParser
 from flask_sqlalchemy import SQLAlchemy
 
+def database_settings():
+    config = ConfigParser()
+    config.read('config.ini')
+    password = config.get('DATABASE', 'password')
+    host = config.get('DATABASE', 'host')
+    return f"{password}@{host}"
+
 db = SQLAlchemy()
 app = Flask(__name__)
 logger = logging.getLogger(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Shahida2@localhost/nic_students"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://postgres:{database_settings()}"
 db.init_app(app)
 
 class Student(db.Model):
