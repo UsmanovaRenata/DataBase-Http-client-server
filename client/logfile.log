@@ -1,0 +1,26 @@
+2023-10-26 20:23:02.607 INFO __cdecl Client::Client(class QSettings *,class QObject *): 12: the client has started work
+2023-10-26 20:23:05.676 INFO void __cdecl Client::sendPostRequest(const class QString &,class QJsonObject &): 31: post request is sent
+2023-10-26 20:23:05.720 INFO void __cdecl Client::onPostReply(class QNetworkReply *): 68: post replay is received
+2023-10-26 20:23:06.094 INFO void __cdecl Client::sendGetRequest(const class QString &): 17: get request is sent
+2023-10-26 20:23:06.322 INFO void __cdecl Client::onGetReply(class QNetworkReply *): 55: get replay is received
+2023-10-27 11:12:25.975 INFO __cdecl Client::Client(class QSettings *,class QObject *): 12: the client has started work
+2023-10-27 11:12:28.646 INFO void __cdecl Client::sendPostRequest(const class QString &,class QJsonObject &): 31: post request is sent
+2023-10-27 11:12:28.657 INFO void __cdecl LoginWindow::sendUser(void): 73: start of authorization
+2023-10-27 11:12:28.709 INFO void __cdecl Client::onPostReply(class QNetworkReply *): 67: post replay is received
+2023-10-27 11:12:29.163 INFO void __cdecl LoginWindow::postFinished(class QByteArray): 49: authorization was successful
+2023-10-27 11:12:29.266 INFO void __cdecl Client::sendGetRequest(const class QString &): 17: get request is sent
+2023-10-27 11:12:29.268 INFO void __cdecl TableWindow::getAllData(void): 32: getting a table
+2023-10-27 11:12:29.422 INFO void __cdecl Client::onGetReply(class QNetworkReply *): 54: get replay is received
+2023-10-27 11:12:29.491 INFO void __cdecl TableWindow::getAllDataFinished(class QByteArray): 59: the table is received
+2023-10-27 11:12:52.490 INFO void __cdecl TableWindow::changeData(class QStandardItem *): 70: the item has been changed
+2023-10-27 11:12:52.506 INFO void __cdecl Client::sendPostRequest(const class QString &,class QJsonObject &): 31: post request is sent
+2023-10-27 11:12:52.725 INFO void __cdecl Client::onPostReply(class QNetworkReply *): 67: post replay is received
+2023-10-27 11:12:52.725 INFO void __cdecl TableWindow::postFinished(class QByteArray): 111: data changed successfully
+2023-10-27 11:13:47.570 DEBUGvoid __cdecl LoginWindow::postFinished(class QByteArray): 41: response code 1
+2023-10-27 11:13:53.759 DEBUGvoid __cdecl TableWindow::changeData(class QStandardItem *): 74: modified item id:  63  column:  "course"
+2023-10-27 12:07:49.379 DEBUGvoid __cdecl LoginWindow::postFinished(class QByteArray): 41: response code 1
+2023-10-27 12:24:33.150 DEBUGvoid __cdecl LoginWindow::postFinished(class QByteArray): 41: response code 1
+2023-10-27 12:38:37.844 DEBUGvoid __cdecl LoginWindow::postFinished(class QByteArray): 41: response code 1
+2023-10-27 12:58:36.206 DEBUGvoid __cdecl LoginWindow::postFinished(class QByteArray): 41: response code 1
+2023-10-27 12:58:56.903 DEBUGvoid __cdecl TableWindow::changeData(class QStandardItem *): 74: modified item id:  47  column:  "name_student"
+2023-11-03 11:08:08.356 DEBUGvoid __cdecl LoginWindow::postFinished(class QByteArray): 41: response code 1
