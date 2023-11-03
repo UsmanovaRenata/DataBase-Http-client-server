@@ -11,7 +11,7 @@ class TableDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
-    explicit TableDelegate(QObject *parent = nullptr);
+    explicit TableDelegate(QObject *parent = nullptr) : QItemDelegate{parent} {}
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     void setEditorData(QWidget *editor, const QModelIndex &index) const override;
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override;

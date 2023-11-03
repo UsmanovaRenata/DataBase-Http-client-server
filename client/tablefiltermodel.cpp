@@ -1,4 +1,4 @@
-#include "tablefiltermodel.h".h"
+#include "tablefiltermodel.h"
 
 TableFilterModel::TableFilterModel(QObject *parent) : QSortFilterProxyModel{parent} {}
 

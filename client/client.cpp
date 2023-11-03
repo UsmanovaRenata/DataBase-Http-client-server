@@ -41,11 +41,6 @@ void Client::sendPostRequest(const QString &url, QJsonObject &data)
 
 }
 
-Client::~Client()
-{
-    delete manager;
-    delete settings;
-}
 
 void Client::onGetReply(QNetworkReply *reply)
 {

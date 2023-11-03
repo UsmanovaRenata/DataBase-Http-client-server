@@ -108,7 +108,7 @@ def authorization():
 
 @app.route('/all', methods=['GET'])
 def all_students():
-    students = Student.query.all()  # Получить всех студентов
+    students = Student.query.all()
     students_json = []
 
     for student in students:
@@ -167,10 +167,8 @@ def add_student():
     photo = new_student_data.get('photo')
     date = datetime.date.fromisoformat(date_str)
     photo_bytes = base64.b64decode(photo)
-    # Создаем нового студента
-    new_student = Student(name_student=name, course=course, group=group, date=date, photo=photo_bytes)
 
-    # Добавляем его в базу данных
+    new_student = Student(name_student=name, course=course, group=group, date=date, photo=photo_bytes)
     db.session.add(new_student)
     db.session.commit()
     new_student_info = {
@@ -188,7 +186,6 @@ def add_student():
             "new_student": new_student_info
         }
 
-        # Отправляем JSON-ответ с данными о новом студенте
         logger.info("new student successfully added")
         return jsonify(response_data)
     else:

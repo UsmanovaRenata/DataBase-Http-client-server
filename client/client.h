@@ -3,7 +3,7 @@
 #include <QtNetwork>
 #include<QtCore>
 #include<QLoggingCategory>
-#include"logger.h"
+
 class Client : public QObject
 {
     Q_OBJECT
@@ -13,7 +13,6 @@ public:
     void sendPostRequest(const QString &url, QJsonObject &data);
     QSettings *settings;
     QString hostPort;
-    ~Client();
 private:
     QNetworkAccessManager *manager;
 signals:

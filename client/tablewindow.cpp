@@ -9,7 +9,6 @@ TableWindow::TableWindow(Client *client, QWidget *parent) :
     ui->setupUi(this);
     model = new TableModel();
     filterModel = new TableFilterModel();
-    //setupContextMenu();
     connect(client, &Client::getReplyReceived, this, &TableWindow::getAllDataFinished);
     connect(model, &TableModel::itemChanged, this, &TableWindow::changeData);
     ui->tableView->setItemDelegateForColumn(5, new PhotoDelegate(ui->tableView));

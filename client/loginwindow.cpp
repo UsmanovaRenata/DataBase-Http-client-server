@@ -78,6 +78,3 @@ void LoginWindow::on_pushButton_clicked()
 {
     sendUser();
 }
-
-
-

@@ -4,7 +4,7 @@ PhotoDelegate::PhotoDelegate(QObject *parent) : QItemDelegate(parent) {}
 
 QWidget *PhotoDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    QLabel *editorLabel = new QLabel(parent); // Используйте QLabel
+    QLabel *editorLabel = new QLabel(parent);
     editorLabel->setGeometry(option.rect);
     QString filePath = QFileDialog::getOpenFileName(nullptr, "Выберите фото", "", "Images (*.png *.jpg *.jpeg *.bmp)");
     if (!filePath.isEmpty()) {
