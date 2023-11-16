@@ -52,7 +52,9 @@ void TableWindow::setFilterLineEdits()
 void TableWindow::getAllDataFinished(QByteArray responseData)
 {
     QJsonDocument doc = QJsonDocument::fromJson(responseData);
-    if(doc.isEmpty()){
+    QJsonObject jsonObj = doc.object();
+    QJsonValue messageValue = jsonObj.value("message");
+    if(messageValue == 0){
         qCritical() << "the table was not received";
     }else{
         qInfo() << "the table is received";
