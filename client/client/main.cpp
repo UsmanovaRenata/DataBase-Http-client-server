@@ -16,7 +16,12 @@ int main(int argc, char *argv[])
     Client *client = new Client(settings);
     LoginWindow *logWin = new LoginWindow(client);
     logWin->show();
-    return a.exec();
+    int result = a.exec();
+    delete logWin;
+    delete client;
+    delete settings;
+    return result;
+
 }
 
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)

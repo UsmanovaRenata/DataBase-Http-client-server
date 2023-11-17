@@ -1,15 +1,15 @@
 #include "tablefiltermodel.h"
 
-TableFilterModel::TableFilterModel(QObject *parent) : QSortFilterProxyModel{parent} {}
+TableFilterModel::TableFilterModel(QObject *parent) : QSortFilterProxyModel(parent) {}
 
-void TableFilterModel::setFiltersKey(int colums_count)
+void TableFilterModel::setFiltersKey(const int &colums_count)
 {
     for (int i = 0; i < colums_count; i++) {
         filters.insert(i, QString());
     }
 }
 
-void TableFilterModel::setFilters(int column, QString filter)
+void TableFilterModel::setFilters(const int &column, const QString &filter)
 {
     filters[column] = filter;
     invalidateFilter();
@@ -21,7 +21,7 @@ void TableFilterModel::clearFilters()
     invalidate();
 }
 
-bool TableFilterModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+bool TableFilterModel::filterAcceptsRow(int &source_row, const QModelIndex &source_parent) const
 {
     if(filters.isEmpty()){
         return true;

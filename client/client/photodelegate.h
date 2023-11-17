@@ -3,13 +3,8 @@
 
 #include <QItemDelegate>
 #include <QObject>
-#include <QFileDialog>
-#include <QPushButton>
-#include <QHBoxLayout>
-#include <QPixmap>
-#include <QLabel>
 #include <QPainter>
-#include <QBuffer>
+
 class PhotoDelegate : public QItemDelegate
 {
     Q_OBJECT

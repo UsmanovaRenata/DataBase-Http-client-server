@@ -1,12 +1,15 @@
 ﻿#include "loginwindow.h"
 #include "ui_loginwindow.h"
-
+#include<QJsonObject>
+#include<QMessageBox>
+#include<QCryptographicHash>
 LoginWindow::LoginWindow(Client *client, QWidget *parent) :
     client(client),
     QDialog(parent),
     ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
+    table = nullptr;
     ui->usernameEdit->setPlaceholderText("login");
     ui->passwordEdit->setPlaceholderText("password");
     ui->passwordEdit->setEchoMode(QLineEdit::Password);
@@ -17,6 +20,9 @@ LoginWindow::LoginWindow(Client *client, QWidget *parent) :
 LoginWindow::~LoginWindow()
 {
     delete ui;
+    if(table != nullptr){
+        delete table;
+    }
 }
 
 
@@ -31,7 +37,7 @@ void LoginWindow::on_addNewClient_clicked()
 }
 
 
-void LoginWindow::postFinished(QByteArray responseData)
+void LoginWindow::postFinished(const QByteArray &responseData)
 {
     if (isVisible()) {
         QJsonDocument doc = QJsonDocument::fromJson(responseData);
@@ -50,7 +56,6 @@ void LoginWindow::postFinished(QByteArray responseData)
             table = new TableWindow(client);
             this->close();
             table->show();
-            delete this;
             break;
         default:
             QMessageBox::information(this, "Вход не выполнен", "Введены некорректные данные");

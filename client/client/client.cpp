@@ -26,7 +26,7 @@ void Client::sendGetRequest(const QString &url)
 
 }
 
-void Client::sendPostRequest(const QString &url, QJsonObject &data)
+void Client::sendPostRequest(const QString &url, const QJsonObject &data)
 {
     qInfo() << "post request is sent";
     auto request = QNetworkRequest(QUrl(url));
@@ -39,6 +39,11 @@ void Client::sendPostRequest(const QString &url, QJsonObject &data)
         reply->deleteLater();
     });
 
+}
+
+Client::~Client()
+{
+    delete manager;
 }
 
 

@@ -1,4 +1,10 @@
 #include "photodelegate.h"
+#include <QLabel>
+#include <QPixmap>
+#include <QFileDialog>
+#include <QHBoxLayout>
+#include <QBuffer>
+#include <QPushButton>
 
 PhotoDelegate::PhotoDelegate(QObject *parent) : QItemDelegate(parent) {}
 
@@ -50,8 +56,8 @@ void PhotoDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option,
         QRect cellRect = option.rect;
         QSize desiredSize(25, 25);
         QPixmap scaledIcon = icon.scaled(desiredSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        int x = cellRect.left() + (cellRect.width() - scaledIcon.width()) / 2;
-        int y = cellRect.bottom() - scaledIcon.height();
+        const int x = cellRect.left() + (cellRect.width() - scaledIcon.width()) / 2;
+        const int y = cellRect.bottom() - scaledIcon.height();
         painter->drawPixmap(x, y, scaledIcon);
     }
 }

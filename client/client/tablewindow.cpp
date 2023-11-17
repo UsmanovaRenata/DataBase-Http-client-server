@@ -1,6 +1,6 @@
 #include "tablewindow.h"
 #include "ui_tablewindow.h"
-
+#include<QFileDialog>
 TableWindow::TableWindow(Client *client, QWidget *parent) :
     client(client),
     QMainWindow(parent),
@@ -23,6 +23,8 @@ TableWindow::TableWindow(Client *client, QWidget *parent) :
 TableWindow::~TableWindow()
 {
     delete ui;
+    delete model;
+    delete filterModel;
 }
 
 void TableWindow::getAllData()
@@ -49,7 +51,7 @@ void TableWindow::setFilterLineEdits()
 }
 
 
-void TableWindow::getAllDataFinished(QByteArray responseData)
+void TableWindow::getAllDataFinished(const QByteArray &responseData)
 {
     QJsonDocument doc = QJsonDocument::fromJson(responseData);
     QJsonObject jsonObj = doc.object();
@@ -101,7 +103,7 @@ void TableWindow::on_addStudentButton_clicked()
     qInfo() << "a new student has been sent";
 }
 
-void TableWindow::postFinished(QByteArray responseData)
+void TableWindow::postFinished(const QByteArray &responseData)
 {
     disconnect(client, &Client::postReplyReceived, this, &TableWindow::postFinished);
     QJsonDocument doc = QJsonDocument::fromJson(responseData);
@@ -115,7 +117,7 @@ void TableWindow::postFinished(QByteArray responseData)
     }
 }
 
-void TableWindow::postDataFinished(QByteArray responseData)
+void TableWindow::postDataFinished(const QByteArray &responseData)
 {
     disconnect(client, &Client::postReplyReceived, this, &TableWindow::postDataFinished);
     QJsonDocument doc = QJsonDocument::fromJson(responseData);

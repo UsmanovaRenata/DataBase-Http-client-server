@@ -7,7 +7,7 @@
 #include"photodelegate.h"
 #include "tabledelegate.h"
 #include "tablefiltermodel.h"
-//#include "tablefiltermodel.h"
+
 namespace Ui {
 class TableWindow;
 }
@@ -29,11 +29,11 @@ private:
     void setFilterLineEdits();
 
 private slots:
-    void getAllDataFinished(QByteArray responseData);
+    void getAllDataFinished(const QByteArray &responseData);
     void changeData(QStandardItem *item);
     void on_addStudentButton_clicked();
-    void postFinished(QByteArray responseData);
-    void postDataFinished(QByteArray responseData);
+    void postFinished(const QByteArray &responseData);
+    void postDataFinished(const QByteArray &responseData);
     QString encodePhoto(QString path);
     void clearFilters();
     void on_pushButton_clicked();

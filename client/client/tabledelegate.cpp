@@ -1,5 +1,7 @@
 #include "tabledelegate.h"
-
+#include <QSpinBox>
+#include <QDateEdit>
+#include <QPainter>
 QWidget *TableDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     if (index.column() == 2) {

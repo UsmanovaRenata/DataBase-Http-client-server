@@ -1,5 +1,8 @@
 #include "newclientwindow.h"
 #include "ui_newclientwindow.h"
+#include<QJsonObject>
+#include<QMessageBox>
+#include<QCryptographicHash>
 
 NewClientWindow::NewClientWindow(Client *client, QWidget *parent) :
     client(client),
@@ -30,7 +33,7 @@ NewClientWindow::~NewClientWindow()
 }
 
 
-void NewClientWindow::postFinished(QByteArray responseData)
+void NewClientWindow::postFinished(const QByteArray &responseData)
 {
     QJsonDocument doc = QJsonDocument::fromJson(responseData);
     QJsonObject jsonObj = doc.object();

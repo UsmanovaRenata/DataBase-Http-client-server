@@ -17,7 +17,7 @@ public:
 
 private slots:
     void on_addNewClient_clicked();
-    void postFinished(QByteArray responseData);
+    void postFinished(const QByteArray &responseData);
     void on_pushButton_clicked();
 private:
     void sendUser();

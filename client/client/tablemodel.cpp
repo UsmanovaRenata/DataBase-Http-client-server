@@ -1,7 +1,7 @@
 
 #include "tablemodel.h"
 
-TableModel::TableModel()
+TableModel::TableModel(QObject *parent) : QStandardItemModel(parent)
 {
     setHorizontalHeaderLabels(QStringList() << "id" << "name" << "course" << "group" << "date" << "photo");
 
@@ -21,14 +21,14 @@ void TableModel::setData(const QJsonObject &students)
     }
 }
 
-int TableModel::getId(const QModelIndex index)
+int TableModel::getId(const QModelIndex &index)
 {
     int row = index.row();
     QModelIndex idIndex = this->index(row, 0);
     return data(idIndex).toInt();
 }
 
-QString TableModel::headerData(const QModelIndex index)
+QString TableModel::headerData(const QModelIndex &index)
 {
     int section = index.column();
     switch (section) {
@@ -44,7 +44,7 @@ QString TableModel::headerData(const QModelIndex index)
     }
 }
 
-void TableModel::addNewStudent(QJsonObject newStudent)
+void TableModel::addNewStudent(const QJsonObject &newStudent)
 {
     QList<QStandardItem*> items;
     int id = newStudent["id"].toInt();
@@ -59,7 +59,7 @@ void TableModel::addNewStudent(QJsonObject newStudent)
     appendRow(items);
 }
 
-void TableModel::deleteStudent(int studentId)
+void TableModel::deleteStudent(const int &studentId)
 {
     QModelIndex indexToRemove;
     for (int row = 0; row < rowCount(); ++row) {
@@ -73,6 +73,13 @@ void TableModel::deleteStudent(int studentId)
 
     if (indexToRemove.isValid()) {
         removeRow(indexToRemove.row());
+    }
+}
+
+TableModel::~TableModel()
+{
+    if(rowCount()){
+        removeRows(0,rowCount());
     }
 }
 

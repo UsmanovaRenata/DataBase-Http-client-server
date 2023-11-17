@@ -2,9 +2,7 @@
 #define NEWCLIENTWINDOW_H
 #include "client.h"
 #include <QDialog>
-#include<QJsonObject>
-#include<QMessageBox>
-#include<QCryptographicHash>
+
 namespace Ui {
 class NewClientWindow;
 }
@@ -18,7 +16,7 @@ public:
     ~NewClientWindow();
 
 private slots:
-    void postFinished(QByteArray responseData);
+    void postFinished(const QByteArray &responseData);
     void on_pushButton_clicked();
 
 private:

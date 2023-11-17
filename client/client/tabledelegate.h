@@ -3,9 +3,7 @@
 
 #include <QItemDelegate>
 #include <QObject>
-#include <QSpinBox>
-#include <QDateEdit>
-#include <QPainter>
+
 
 class TableDelegate : public QItemDelegate
 {

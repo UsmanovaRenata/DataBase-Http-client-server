@@ -2,7 +2,7 @@
 #define CLIENT_H
 #include <QtNetwork>
 #include<QtCore>
-#include<QLoggingCategory>
+
 
 class Client : public QObject
 {
@@ -10,14 +10,15 @@ class Client : public QObject
 public:
     explicit Client(QSettings *settings, QObject *parent = nullptr);
     void sendGetRequest(const QString &url);
-    void sendPostRequest(const QString &url, QJsonObject &data);
+    void sendPostRequest(const QString &url, const QJsonObject &data);
     QSettings *settings;
     QString hostPort;
+    ~Client();
 private:
     QNetworkAccessManager *manager;
 signals:
-    void getReplyReceived(QByteArray responseData);
-    void postReplyReceived(QByteArray responseData);
+    void getReplyReceived(const QByteArray &responseData);
+    void postReplyReceived(const QByteArray &responseData);
 private slots:
     void onGetReply(QNetworkReply *reply);
     void onPostReply(QNetworkReply *reply);

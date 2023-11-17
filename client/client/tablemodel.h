@@ -9,12 +9,13 @@ class TableModel : public QStandardItemModel
 {
     Q_OBJECT
 public:
-    TableModel();
+    explicit TableModel(QObject *parent = nullptr);
     void setData(const QJsonObject &students);
-    int getId(const QModelIndex index);
-    QString headerData(const QModelIndex index);
-    void addNewStudent(QJsonObject newStudent);
-    void deleteStudent(int studentId);
+    int getId(const QModelIndex &index);
+    QString headerData(const QModelIndex &index);
+    void addNewStudent(const QJsonObject &newStudent);
+    void deleteStudent(const int &studentId);
+    ~TableModel();
 };
 
 
