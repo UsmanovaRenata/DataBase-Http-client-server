@@ -56,7 +56,7 @@ void TableWindow::getAllDataFinished(const QByteArray &responseData)
     QJsonDocument doc = QJsonDocument::fromJson(responseData);
     QJsonObject jsonObj = doc.object();
     QJsonValue messageValue = jsonObj.value("message");
-    if(messageValue == 0){
+    if(messageValue != 200){
         qCritical() << "the table was not received";
     }else{
         qInfo() << "the table is received";
@@ -86,7 +86,6 @@ void TableWindow::changeData(QStandardItem *item)
 
 void TableWindow::on_addStudentButton_clicked()
 {
-
     QJsonObject newStudent;
     newStudent["name_student"] = ui->name->text();
     newStudent["course"] = ui->course->text();
@@ -110,7 +109,7 @@ void TableWindow::postFinished(const QByteArray &responseData)
     QJsonObject jsonObj = doc.object();
     QJsonValue messageValue = jsonObj.value("message");
     int message = messageValue.toInt();
-    if(message){
+    if(message == 200){
         qInfo() << "data changed successfully";
     }else{
         qCritical() << "data modification error";
@@ -124,7 +123,7 @@ void TableWindow::postDataFinished(const QByteArray &responseData)
     QJsonObject jsonObj = doc.object();
     QJsonValue messageValue = jsonObj.value("message");
     int message = messageValue.toInt();
-    if (message) {
+    if (message == 200) {
         QJsonObject newStudent = jsonObj.value("new_student").toObject();
         model->setData(newStudent);
         qInfo() << "new student successfully added";

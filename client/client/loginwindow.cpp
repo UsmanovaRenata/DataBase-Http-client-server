@@ -46,11 +46,11 @@ void LoginWindow::postFinished(const QByteArray &responseData)
         int message = messageValue.toInt();
         qDebug() << "response code" << message;
         switch (message) {
-        case 0:
+        case 403:
             QMessageBox::information(this, "Вход не выполнен", "Неверный логин или пароль");
             qWarning() << "authorization failed: the user does not exist";
             break;
-        case 1:
+        case 200:
             QMessageBox::information(this, "Вход выполнен", "Авторизация прошла успешно");
             qInfo() << "authorization was successful";
             table = new TableWindow(client);

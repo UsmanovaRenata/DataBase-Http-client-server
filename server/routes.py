@@ -7,41 +7,36 @@ import datetime
 
 app = Flask(__name__)
 
-@app.route('/add_user', methods=['GET', 'POST'])
-def add_user():
-    newUserData = request.json
-    username = newUserData.get('username')
-    password = newUserData.get('password')
-    if username and password:
-        if check_credentials(username, password):
-            responseData = {"message": 0}
-            logger.warning("the user already exists")
-        else:
-            save_to_config(username, password)
-            responseData = {"message": 1}
-            logger.info("authorization was successful")
-    else:
-        responseData = {"message": 2}
-        logger.warning("incorrect data")
-    return jsonify(responseData)
-
 @app.route('/login', methods=['GET', 'POST'])
-def authorization():
+def authorization(newUser=False):
     request_data = request.json
     username = request_data.get('username')
     password = request_data.get('password')
     if username and password:
         if check_credentials(username, password):
-            responseData = {"message": 1}
-            logger.info("authorization was successful")
+            if(newUser):
+                responseData = {"message": 403}
+                logger.info("the user already exists")
+            else:
+                responseData = {"message": 200}
+                logger.info("authorization was successful")
         else:
-            responseData = {"message": 0}
-            logger.warning("the user does not exist")
+            if(newUser):
+                save_to_config(username, password)
+                responseData = {"message": 200}
+                logger.info("user added successfully")
+            else:
+                responseData = {"message": 403}
+                logger.warning("the user does not exist")
     else:
-            responseData = {"message": 2}
-            logger.warning("incorrect data")
+        responseData = {"message": 400}
+        logger.warning("incorrect data")
 
     return jsonify(responseData)
+
+@app.route('/add_user', methods=['GET', 'POST'])
+def add_user():
+    return authorization(True)
 
 @app.route('/all', methods=['GET'])
 def all_students():
@@ -63,10 +58,10 @@ def all_students():
         students_json.append(student_data)
     if len(students_json) != 0:
         logger.info("all data has been sent")
-        return jsonify(message=1, students=students_json)
+        return jsonify(message=200, students=students_json)
     else:
         logger.critical("error sending data")
-        return jsonify({"message": 0})
+        return jsonify({"message": 500})
 
 @app.route('/change_data', methods=['POST'])
 def change_data():
@@ -89,10 +84,10 @@ def change_data():
         db.session.commit()
 
         logger.info("data changed successfully")
-        return jsonify({"message": 1})
+        return jsonify({"message": 200})
     else:
         logger.critical("data modification error")
-        return jsonify({"message": 0})
+        return jsonify({"message": 500})
 
 
 @app.route('/add_student', methods=['POST'])
@@ -120,7 +115,7 @@ def add_student():
 
     if new_student_info:
         response_data = {
-            "message": 1,
+            "message": 200,
             "new_student": new_student_info
         }
 
@@ -128,7 +123,7 @@ def add_student():
         return jsonify(response_data)
     else:
         logger.critical("error adding a new student")
-        return jsonify({"message": 0})
+        return jsonify({"message": 500})
 
 @app.route('/delete_student', methods=['POST'])
 def delete_student():
@@ -139,7 +134,7 @@ def delete_student():
         db.session.delete(student)
         db.session.commit()
         logger.info("student successfully removed")
-        return jsonify({"message": 1})
+        return jsonify({"message": 200})
     logger.critical("student deletion error")
-    return jsonify({"message": 0})
+    return jsonify({"message": 500})
 

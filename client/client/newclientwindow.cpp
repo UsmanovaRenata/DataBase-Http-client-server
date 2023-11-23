@@ -41,11 +41,11 @@ void NewClientWindow::postFinished(const QByteArray &responseData)
     int message = messageValue.toInt();
     qDebug() << "response code" << message;
     switch (message) {
-    case 0:
+    case 403:
         QMessageBox::information(this, "Ошибка", "Такой пользователь уже существует");
         qWarning() << "authorization failed: the user already exists";
         break;
-    case 1:
+    case 200:
         QMessageBox::information(this, "Успех!", "Пользователь успешно добавлен");
         qInfo() << "authorization was successful";
         break;
