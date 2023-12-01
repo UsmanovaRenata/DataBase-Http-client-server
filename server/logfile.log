@@ -16,3 +16,174 @@
 2023-11-03 11:07:32,565 - INFO - <module> - starting the server
 2023-11-03 11:08:08,349 - INFO - authorization - authorization was successful
 2023-11-03 11:08:09,257 - INFO - all_students - all data has been sent
+2023-11-17 09:13:29,360 - INFO - <module> - starting the server
+2023-11-17 09:13:30,122 - INFO - <module> - starting the server
+2023-11-17 09:17:18,354 - INFO - authorization - authorization was successful
+2023-11-17 09:17:19,035 - INFO - all_students - all data has been sent
+2023-11-17 09:19:32,972 - INFO - authorization - authorization was successful
+2023-11-17 09:19:33,374 - INFO - all_students - all data has been sent
+2023-11-17 09:40:27,039 - INFO - authorization - authorization was successful
+2023-11-17 09:40:27,756 - INFO - all_students - all data has been sent
+2023-11-17 09:40:41,603 - INFO - authorization - authorization was successful
+2023-11-17 09:40:41,948 - INFO - all_students - all data has been sent
+2023-11-17 09:48:28,950 - INFO - authorization - authorization was successful
+2023-11-17 09:48:29,552 - INFO - all_students - all data has been sent
+2023-11-17 09:55:11,752 - INFO - authorization - authorization was successful
+2023-11-17 09:55:12,157 - INFO - all_students - all data has been sent
+2023-11-17 09:55:21,457 - INFO - change_data - data changed successfully
+2023-11-17 09:56:32,781 - INFO - authorization - authorization was successful
+2023-11-17 09:56:33,191 - INFO - all_students - all data has been sent
+2023-11-17 10:02:36,547 - INFO - authorization - authorization was successful
+2023-11-17 10:02:37,077 - INFO - all_students - all data has been sent
+2023-11-17 10:02:50,361 - INFO - authorization - authorization was successful
+2023-11-17 10:02:50,819 - INFO - all_students - all data has been sent
+2023-11-17 10:03:14,125 - INFO - authorization - authorization was successful
+2023-11-17 10:03:14,594 - INFO - all_students - all data has been sent
+2023-11-17 10:10:12,187 - INFO - authorization - authorization was successful
+2023-11-17 10:10:12,974 - INFO - all_students - all data has been sent
+2023-11-17 10:11:38,465 - INFO - authorization - authorization was successful
+2023-11-17 10:11:39,520 - INFO - all_students - all data has been sent
+2023-11-17 10:11:52,811 - INFO - authorization - authorization was successful
+2023-11-17 10:11:53,384 - INFO - all_students - all data has been sent
+2023-11-17 10:13:45,124 - INFO - authorization - authorization was successful
+2023-11-17 10:13:45,621 - INFO - all_students - all data has been sent
+2023-11-17 10:14:01,814 - INFO - authorization - authorization was successful
+2023-11-17 10:14:02,325 - INFO - all_students - all data has been sent
+2023-11-17 10:14:47,547 - INFO - authorization - authorization was successful
+2023-11-17 10:14:47,953 - INFO - all_students - all data has been sent
+2023-11-17 10:17:03,212 - INFO - authorization - authorization was successful
+2023-11-17 10:17:05,743 - INFO - all_students - all data has been sent
+2023-11-17 10:26:14,393 - INFO - authorization - authorization was successful
+2023-11-17 10:26:14,858 - INFO - all_students - all data has been sent
+2023-11-17 10:26:42,286 - INFO - authorization - authorization was successful
+2023-11-17 10:26:42,716 - INFO - all_students - all data has been sent
+2023-11-17 10:26:51,181 - INFO - authorization - authorization was successful
+2023-11-17 10:26:51,590 - INFO - all_students - all data has been sent
+2023-11-17 10:43:30,520 - INFO - authorization - authorization was successful
+2023-11-17 10:43:30,923 - INFO - all_students - all data has been sent
+2023-11-23 15:14:23,170 - INFO - <module> - starting the server
+2023-11-23 15:20:35,419 - INFO - <module> - starting the server
+2023-11-23 15:20:37,914 - INFO - <module> - starting the server
+2023-11-23 15:20:44,127 - INFO - authorization - authorization was successful
+2023-11-23 15:20:44,998 - INFO - all_students - all data has been sent
+2023-11-23 15:21:03,791 - INFO - authorization - user added successfully
+2023-11-23 15:21:05,564 - INFO - authorization - the user already exists
+2023-11-23 15:21:06,483 - INFO - authorization - the user already exists
+2023-11-23 15:22:21,827 - INFO - authorization - authorization was successful
+2023-11-23 15:22:22,368 - INFO - all_students - all data has been sent
+2023-11-23 15:22:41,587 - INFO - authorization - the user already exists
+2023-11-23 15:23:03,210 - INFO - authorization - user added successfully
+2023-11-23 15:23:20,396 - INFO - authorization - authorization was successful
+2023-11-23 15:23:21,603 - INFO - all_students - all data has been sent
+2023-11-23 15:24:00,117 - INFO - <module> - starting the server
+2023-11-23 15:24:00,605 - INFO - <module> - starting the server
+2023-11-23 15:24:01,409 - INFO - <module> - starting the server
+2023-11-23 15:24:15,168 - INFO - authorization - user added successfully
+2023-11-23 15:24:25,283 - INFO - authorization - authorization was successful
+2023-11-23 15:24:26,320 - INFO - all_students - all data has been sent
+2023-11-30 14:19:07,017 - INFO - <module> - starting the server
+2023-11-30 14:19:08,202 - INFO - <module> - starting the server
+2023-11-30 14:19:32,121 - INFO - authorization - authorization was successful
+2023-11-30 14:21:45,327 - INFO - authorization - authorization was successful
+2023-11-30 14:21:56,408 - INFO - delete_student - student successfully removed
+2023-11-30 14:22:05,553 - INFO - delete_student - student successfully removed
+2023-11-30 14:22:20,649 - INFO - delete_student - student successfully removed
+2023-11-30 14:22:31,601 - INFO - authorization - authorization was successful
+2023-11-30 14:22:32,088 - INFO - all_students - all data has been sent
+2023-11-30 15:04:38,665 - INFO - <module> - starting the server
+2023-11-30 15:04:39,706 - INFO - <module> - starting the server
+2023-11-30 15:34:03,275 - INFO - <module> - starting the server
+2023-11-30 15:37:26,457 - INFO - <module> - starting the server
+2023-11-30 15:37:27,599 - INFO - <module> - starting the server
+2023-11-30 15:38:25,496 - INFO - <module> - starting the server
+2023-11-30 15:38:27,065 - INFO - <module> - starting the server
+2023-11-30 15:47:48,645 - INFO - <module> - starting the server
+2023-11-30 15:47:49,787 - INFO - <module> - starting the server
+2023-11-30 15:52:01,969 - INFO - <module> - starting the server
+2023-11-30 15:52:03,105 - INFO - <module> - starting the server
+2023-11-30 16:09:54,915 - INFO - <module> - starting the server
+2023-11-30 16:09:56,256 - INFO - <module> - starting the server
+2023-11-30 16:10:13,410 - INFO - <module> - starting the server
+2023-11-30 16:10:14,454 - INFO - <module> - starting the server
+2023-11-30 16:14:44,761 - INFO - <module> - starting the server
+2023-11-30 16:15:06,202 - INFO - <module> - starting the server
+2023-11-30 16:15:16,214 - INFO - <module> - starting the server
+2023-11-30 16:23:49,069 - INFO - <module> - starting the server
+2023-11-30 16:23:50,169 - INFO - <module> - starting the server
+2023-11-30 16:27:45,790 - INFO - <module> - starting the server
+2023-11-30 16:27:46,903 - INFO - <module> - starting the server
+2023-11-30 16:34:00,224 - INFO - <module> - starting the server
+2023-11-30 16:34:00,960 - INFO - <module> - starting the server
+2023-11-30 16:34:17,107 - INFO - <module> - starting the server
+2023-11-30 16:34:17,893 - INFO - <module> - starting the server
+2023-11-30 16:38:41,880 - INFO - <module> - starting the server
+2023-11-30 16:40:18,169 - INFO - <module> - starting the server
+2023-11-30 16:40:18,923 - INFO - <module> - starting the server
+2023-11-30 16:40:42,688 - INFO - <module> - starting the server
+2023-11-30 16:40:43,560 - INFO - <module> - starting the server
+2023-11-30 16:49:22,622 - INFO - <module> - starting the server
+2023-11-30 16:49:23,393 - INFO - <module> - starting the server
+2023-11-30 16:49:31,511 - INFO - <module> - starting the server
+2023-11-30 16:49:32,401 - INFO - <module> - starting the server
+2023-11-30 17:22:03,553 - INFO - <module> - starting the server
+2023-11-30 17:22:05,176 - INFO - <module> - starting the server
+2023-11-30 17:22:23,271 - INFO - <module> - starting the server
+2023-11-30 17:22:24,093 - INFO - <module> - starting the server
+2023-11-30 17:22:48,788 - INFO - <module> - starting the server
+2023-11-30 17:22:49,694 - INFO - <module> - starting the server
+2023-11-30 17:23:09,454 - INFO - <module> - starting the server
+2023-11-30 17:23:10,345 - INFO - <module> - starting the server
+2023-11-30 17:25:45,033 - INFO - <module> - starting the server
+2023-11-30 17:25:45,741 - INFO - <module> - starting the server
+2023-11-30 17:26:08,475 - INFO - <module> - starting the server
+2023-11-30 17:26:09,247 - INFO - <module> - starting the server
+2023-11-30 17:29:20,006 - INFO - <module> - starting the server
+2023-11-30 17:29:20,880 - INFO - <module> - starting the server
+2023-11-30 17:39:28,788 - INFO - <module> - starting the server
+2023-11-30 17:39:29,759 - INFO - <module> - starting the server
+2023-11-30 17:39:37,463 - INFO - authorization - authorization was successful
+2023-11-30 17:40:15,152 - INFO - <module> - starting the server
+2023-11-30 17:40:16,094 - INFO - <module> - starting the server
+2023-11-30 17:40:19,693 - INFO - authorization - authorization was successful
+2023-11-30 17:40:59,870 - INFO - <module> - starting the server
+2023-11-30 17:41:00,822 - INFO - <module> - starting the server
+2023-11-30 17:41:08,794 - INFO - authorization - authorization was successful
+2023-11-30 17:41:09,310 - INFO - all_students - all data has been sent
+2023-11-30 17:42:16,059 - INFO - <module> - starting the server
+2023-11-30 17:42:16,931 - INFO - <module> - starting the server
+2023-11-30 17:42:19,246 - INFO - authorization - authorization was successful
+2023-11-30 17:42:19,787 - INFO - all_students - all data has been sent
+2023-11-30 17:44:26,013 - INFO - <module> - starting the server
+2023-11-30 17:55:40,791 - INFO - <module> - starting the server
+2023-11-30 17:55:41,555 - INFO - <module> - starting the server
+2023-11-30 17:56:34,626 - INFO - <module> - starting the server
+2023-11-30 18:06:23,714 - INFO - <module> - starting the server
+2023-11-30 18:06:24,660 - INFO - <module> - starting the server
+2023-11-30 18:06:32,382 - INFO - authorization - authorization was successful
+2023-11-30 18:06:33,022 - INFO - all_students - all data has been sent
+2023-11-30 18:06:48,647 - INFO - <module> - starting the server
+2023-11-30 18:06:49,497 - INFO - <module> - starting the server
+2023-11-30 18:06:51,935 - INFO - authorization - authorization was successful
+2023-11-30 18:06:52,345 - INFO - all_students - all data has been sent
+2023-11-30 18:07:21,511 - CRITICAL - delete_student - student deletion error
+2023-11-30 18:07:54,812 - INFO - <module> - starting the server
+2023-11-30 18:07:56,563 - INFO - authorization - authorization was successful
+2023-11-30 18:07:57,068 - INFO - all_students - all data has been sent
+2023-11-30 18:08:01,597 - CRITICAL - delete_student - student deletion error
+2023-11-30 18:08:45,657 - INFO - <module> - starting the server
+2023-11-30 18:13:10,760 - INFO - <module> - starting the server
+2023-11-30 18:16:50,189 - INFO - <module> - starting the server
+2023-11-30 18:16:50,887 - INFO - <module> - starting the server
+2023-11-30 18:16:55,261 - INFO - authorization - authorization was successful
+2023-11-30 18:16:56,932 - INFO - authorization - authorization was successful
+2023-12-01 10:59:06,813 - INFO - <module> - starting the server
+2023-12-01 10:59:07,910 - INFO - <module> - starting the server
+2023-12-01 10:59:10,984 - INFO - authorization - authorization was successful
+2023-12-01 10:59:13,244 - INFO - all_students - all data has been sent
+2023-12-01 11:02:47,594 - INFO - authorization - authorization was successful
+2023-12-01 11:02:48,118 - INFO - all_students - all data has been sent
+2023-12-01 11:44:28,212 - INFO - <module> - starting the server
+2023-12-01 11:44:29,454 - INFO - <module> - starting the server
+2023-12-01 11:44:40,966 - INFO - authorization - authorization was successful
+2023-12-01 11:44:41,525 - INFO - all_students - all data has been sent
+2023-12-01 11:44:47,094 - INFO - delete_student - student successfully removed
