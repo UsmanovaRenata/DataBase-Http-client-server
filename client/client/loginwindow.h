@@ -1,6 +1,6 @@
 #ifndef LOGINWINDOW_H
 #define LOGINWINDOW_H
-#include"newclientwindow.h"
+#include "client.h"
 #include <QDialog>
 #include"tablewindow.h"
 namespace Ui {
@@ -16,7 +16,6 @@ public:
     ~LoginWindow();
 
 private slots:
-    void on_addNewClient_clicked();
     void postFinished(const QByteArray &responseData);
     void on_pushButton_clicked();
 private:

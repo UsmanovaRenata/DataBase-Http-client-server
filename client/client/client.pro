@@ -12,7 +12,6 @@ SOURCES += \
     client.cpp \
     loginwindow.cpp \
     main.cpp \
-    newclientwindow.cpp \
     photodelegate.cpp \
     tabledelegate.cpp \
     tablefiltermodel.cpp \
@@ -22,7 +21,6 @@ SOURCES += \
 HEADERS += \
     client.h \
     loginwindow.h \
-    newclientwindow.h \
     photodelegate.h \
     tabledelegate.h \
     tablefiltermodel.h \
@@ -31,7 +29,6 @@ HEADERS += \
 
 FORMS += \
     loginwindow.ui \
-    newclientwindow.ui \
     tablewindow.ui
 
 # Default rules for deployment.

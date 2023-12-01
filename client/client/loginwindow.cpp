@@ -26,16 +26,6 @@ LoginWindow::~LoginWindow()
 }
 
 
-void LoginWindow::on_addNewClient_clicked()
-{
-    this->hide();
-    NewClientWindow *newClient = new NewClientWindow(client, this);
-    newClient->exec();
-    this->show();
-    delete newClient;
-
-}
-
 
 void LoginWindow::postFinished(const QByteArray &responseData)
 {
