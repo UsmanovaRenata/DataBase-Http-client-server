@@ -26,6 +26,19 @@ void Client::sendGetRequest(const QString &url)
 
 }
 
+void Client::sendDeleteRequest(const QString &url, const QString &data)
+{
+    qInfo() << "delete request is sent";
+    auto request = QNetworkRequest(QUrl(url+ '/' + data));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    QNetworkReply *reply = manager->deleteResource(request);
+    connect(reply, &QNetworkReply::finished, [this, reply]() {
+        this->onDeleteReply(reply);
+        reply->deleteLater();
+    });
+
+}
+
 void Client::sendPostRequest(const QString &url, const QJsonObject &data)
 {
     qInfo() << "post request is sent";
@@ -68,6 +81,19 @@ void Client::onPostReply(QNetworkReply *reply)
         emit postReplyReceived(responseData);
     } else {
        qCritical() << "POST Error: " << reply->errorString();
+    }
+
+    reply->deleteLater();
+}
+
+void Client::onDeleteReply(QNetworkReply *reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        QByteArray responseData = reply->readAll();
+        qInfo() << "delete replay is received";
+        emit deleteReplyReceived(responseData);
+    } else {
+       qCritical() << "DELETE Error: " << reply->errorString();
     }
 
     reply->deleteLater();

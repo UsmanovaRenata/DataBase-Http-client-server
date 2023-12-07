@@ -3,15 +3,32 @@ from flask_login import LoginManager, login_user, login_required
 from logger import logger
 from config import check_credentials, User
 from model import db, Student
+from jsonschema import validate
 import base64
 import datetime
 
 app = Flask(__name__)
 login_manager = LoginManager(app)
 
+schema = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "number"},
+        "column": {
+            "type": "string",
+            "enum": ["name_student", "course", "group", "date", "photo"]
+        },
+        "new_value": {
+            "type": "string"
+        }
+    }
+}
+
+
 @login_manager.user_loader
 def load_user(user_id):
     return User(user_id)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def authorization():
@@ -30,7 +47,6 @@ def authorization():
     else:
         logger.warning("incorrect data")
         return jsonify({"message": 404}), 404
-
 
 
 @app.route('/all', methods=['GET'])
@@ -52,30 +68,26 @@ def all_students():
         logger.critical("error sending data")
         return jsonify({"message": 500}), 500
 
+
 @app.route('/change_data', methods=['POST'])
 @login_required
 def change_data():
     changed_data = request.json
-    data_id = changed_data.get('id')
-    column_name = changed_data.get('column')
-    new_value = changed_data.get('new_value')
-    student = Student.query.get(data_id)
-    if student:
-        if column_name == 'name_student':
-            student.name_student = new_value
-        elif column_name == 'course':
-            student.course = new_value
-        elif column_name == 'group':
-            student.group = new_value
-        elif column_name == 'date':
-            student.date = datetime.date.fromisoformat(new_value)
-        elif column_name == 'photo':
-            student.photo = base64.b64decode(new_value)
+    try:
+        validate(changed_data, schema=schema)
+        data_id = changed_data.get('id')
+        column_name = changed_data.get('column')
+        new_value = changed_data.get('new_value')
+        student = Student.query.get(data_id)
+        if column_name == 'date':
+            new_value = datetime.date.fromisoformat(new_value)
+        if column_name == 'photo':
+            new_value = base64.b64decode(new_value)
+        setattr(student, column_name, new_value)
         db.session.commit()
-
         logger.info("data changed successfully")
         return jsonify({"message": 200}), 200
-    else:
+    except:
         logger.critical("data modification error")
         return jsonify({"message": 500}), 500
 
@@ -116,11 +128,10 @@ def add_student():
         logger.critical("error adding a new student")
         return jsonify({"message": 500}), 500
 
-@app.route('/delete_student', methods=['POST'])
+
+@app.route('/delete_student/<id>', methods=['DELETE'])
 @login_required
-def delete_student():
-    delete_student_data = request.json
-    id = delete_student_data.get('id')
+def delete_student(id):
     student = Student.query.get(id)
     if student:
         db.session.delete(student)
@@ -129,4 +140,3 @@ def delete_student():
         return jsonify({"message": 200}), 200
     logger.critical("student deletion error")
     return jsonify({"message": 500}), 500
-

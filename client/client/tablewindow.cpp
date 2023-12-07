@@ -116,6 +116,12 @@ void TableWindow::postFinished(const QByteArray &responseData)
     }
 }
 
+void TableWindow::deleteFinished(const QByteArray &responseData)
+{
+    disconnect(client, &Client::deleteReplyReceived, this, &TableWindow::deleteFinished);
+    postFinished(responseData);
+}
+
 void TableWindow::postDataFinished(const QByteArray &responseData)
 {
     disconnect(client, &Client::postReplyReceived, this, &TableWindow::postDataFinished);
@@ -158,10 +164,8 @@ void TableWindow::clearFilters()
 
 void TableWindow::on_pushButton_clicked()
 {
-    QJsonObject deleteStudent;
-    deleteStudent["id"] = ui->id->text();
-    connect(client, &Client::postReplyReceived, this, &TableWindow::postFinished);
-    client->sendPostRequest(client->hostPort + "/delete_student", deleteStudent);
+    connect(client, &Client::deleteReplyReceived, this, &TableWindow::deleteFinished);
+    client->sendDeleteRequest(client->hostPort + "/delete_student", ui->id->text());
     model->deleteStudent(ui->id->text().toInt());
     ui->id->clear();
     qInfo() << "a student has been sent for deletion";

@@ -33,6 +33,7 @@ private slots:
     void changeData(QStandardItem *item);
     void on_addStudentButton_clicked();
     void postFinished(const QByteArray &responseData);
+    void deleteFinished(const QByteArray &responseData);
     void postDataFinished(const QByteArray &responseData);
     QString encodePhoto(QString path);
     void clearFilters();
